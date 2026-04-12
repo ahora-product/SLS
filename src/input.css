@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Tipografía fija (requisito): 14px cuerpo global; titulares en px fijos.
+  No usar clamp() ni utilidades responsive (md:text-*) para font-size en HTML.
+*/
+@layer base {
+  html {
+    font-size: 14px;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-white font-sans text-brand-dark antialiased;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-brand-dark;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  h5 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  h6 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-brand-action;
+  }
+
+  a {
+    @apply transition-colors duration-200 ease-out;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .pill-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-semibold transition-transform duration-200 ease-out;
+  }
+
+  .pill-btn:active {
+    @apply scale-[0.98];
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pill-btn:active {
+      transform: none;
+    }
+  }
+
+  .card-surface {
+    @apply rounded-card border border-brand-line/60 bg-white shadow-sm;
+  }
+
+  .heading-accent {
+    @apply font-serif italic font-normal text-brand-action;
+  }
+
+  /* Enlace de salto: visible solo con teclado (sr-only no tiene “not-sr-only” en Tailwind 3) */
+  .skip-link {
+    @apply sr-only;
+  }
+
+  .skip-link:focus {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+    display: inline-flex;
+    height: auto;
+    width: auto;
+    overflow: visible;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    clip: auto;
+    white-space: normal;
+    border-width: 0;
+    @apply rounded-full bg-brand-action font-semibold text-white shadow-lg outline-none ring-2 ring-white ring-offset-2 ring-offset-brand-action;
+  }
+}
