@@ -20,7 +20,7 @@ module.exports = {
       fontFamily: {
         sans: ['"DM Sans"', "ui-sans-serif", "system-ui", "sans-serif"],
         display: ['"Outfit"', "ui-sans-serif", "system-ui", "sans-serif"],
-        serif: ['"Cormorant Garamond"', "Georgia", "serif"],
+        serif: ['"Playfair Display"', "Georgia", "serif"],
       },
       borderRadius: {
         card: "20px",
