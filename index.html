@@ -146,7 +146,7 @@
                   href="#seguros"
                   class="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-brand-dark px-5 py-2.5 font-semibold text-brand-dark hover:border-brand-action hover:text-brand-action"
                 >
-                  Ver ramos
+                  Nuestros seguros
                   <i class="ph ph-caret-right text-brand-action" aria-hidden="true"></i>
                 </a>
               </div>
@@ -154,11 +154,11 @@
             <div class="lg:col-span-6">
               <div class="relative overflow-hidden rounded-hero bg-brand-soft shadow-sm ring-1 ring-brand-line/60">
                 <img
-                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
-                  width="1200"
-                  height="900"
-                  alt=""
-                  class="aspect-[4/3] w-full object-cover"
+                  src="assets/images/hero-cabecera.png"
+                  width="1024"
+                  height="1024"
+                  alt="Mujer sonriente conduciendo con el cinturón de seguridad abrochado"
+                  class="aspect-square w-full object-cover"
                   loading="eager"
                   decoding="async"
                 />
@@ -169,30 +169,6 @@
               </div>
             </div>
           </div>
-
-          <div class="border-t border-brand-line/60 pt-10" aria-labelledby="titulo-aseguradoras">
-            <h2 id="titulo-aseguradoras" class="mb-6 text-center font-display">Trabajamos con compañías líderes</h2>
-            <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6" aria-label="Aseguradoras colaboradoras">
-              <li class="flex min-h-[72px] items-center justify-center rounded-card border border-dashed border-brand-line bg-brand-muted text-center font-medium text-brand-dark/50">
-                Logo [RELLENAR]
-              </li>
-              <li class="flex min-h-[72px] items-center justify-center rounded-card border border-dashed border-brand-line bg-brand-muted text-center font-medium text-brand-dark/50">
-                Logo [RELLENAR]
-              </li>
-              <li class="flex min-h-[72px] items-center justify-center rounded-card border border-dashed border-brand-line bg-brand-muted text-center font-medium text-brand-dark/50">
-                Logo [RELLENAR]
-              </li>
-              <li class="flex min-h-[72px] items-center justify-center rounded-card border border-dashed border-brand-line bg-brand-muted text-center font-medium text-brand-dark/50">
-                Logo [RELLENAR]
-              </li>
-              <li class="flex min-h-[72px] items-center justify-center rounded-card border border-dashed border-brand-line bg-brand-muted text-center font-medium text-brand-dark/50">
-                Logo [RELLENAR]
-              </li>
-              <li class="flex min-h-[72px] items-center justify-center rounded-card border border-dashed border-brand-line bg-brand-muted text-center font-medium text-brand-dark/50">
-                Logo [RELLENAR]
-              </li>
-            </ul>
-          </div>
         </div>
       </section>
 
@@ -202,7 +178,7 @@
           <div class="mx-auto mb-10 max-w-3xl text-center">
             <h2 id="titulo-seguros">¿Cómo podemos <span class="heading-accent">ayudarte</span>?</h2>
             <p class="mt-3 text-brand-dark/80">
-              Ramo a ramo, con explicaciones claras y comparativa de alternativas. Elige lo que necesitas y hablamos.
+              Cada seguro, explicado con claridad y con comparativa de alternativas. Elige lo que necesitas y hablamos.
             </p>
           </div>
 
@@ -275,79 +251,153 @@
         </div>
       </section>
 
-      <!-- 3 Destacados -->
-      <section class="bg-white py-12 md:py-16" aria-labelledby="titulo-destacados">
+      <!-- 3 Compañías colaboradoras -->
+      <section class="bg-white py-12 md:py-16" aria-labelledby="titulo-aseguradoras">
         <div class="container-page">
-          <h2 id="titulo-destacados" class="mb-8 text-center font-display">Te puede interesar</h2>
-          <div class="grid gap-6 lg:grid-cols-3">
-            <article class="card-surface flex flex-col overflow-hidden">
-              <div class="aspect-[16/10] bg-brand-muted">
+          <h2 id="titulo-aseguradoras" class="mb-8 text-center font-sans text-[26px] font-bold leading-tight tracking-tight text-brand-dark">
+            Trabajamos con compañías líderes
+          </h2>
+          <ul
+            id="leading-logos"
+            class="leading-logos-grid grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3"
+            aria-label="Aseguradoras colaboradoras"
+          >
+            <li class="leading-logo-item" style="--logo-i: 0">
+              <div
+                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+              >
                 <img
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
-                  width="800"
-                  height="500"
-                  alt=""
-                  class="h-full w-full object-cover"
+                  src="./assets/logos/logo_adeslas.jpg"
+                  alt="Adeslas"
+                  width="200"
+                  height="80"
+                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <div class="flex flex-grow flex-col p-5">
-                <h3>Pack familia y hogar</h3>
-                <p class="mt-2 flex-grow text-brand-dark/80">
-                  Texto promocional genérico. Condiciones y vigencia a definir por la correduría. Sin cifras contractuales en esta demo.
-                </p>
-                <a href="#contacto" class="pill-btn mt-4 min-h-[44px] justify-center bg-brand-action text-white hover:bg-brand-dark"> Me interesa </a>
-              </div>
-            </article>
-            <article class="card-surface flex flex-col overflow-hidden">
-              <div class="aspect-[16/10] bg-brand-muted">
+            </li>
+            <li class="leading-logo-item" style="--logo-i: 1">
+              <div
+                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+              >
                 <img
-                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
-                  width="800"
-                  height="500"
-                  alt=""
-                  class="h-full w-full object-cover"
+                  src="./assets/logos/logo_allianz.jpg"
+                  alt="Allianz"
+                  width="200"
+                  height="80"
+                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <div class="flex flex-grow flex-col p-5">
-                <h3>Salud y bienestar</h3>
-                <p class="mt-2 flex-grow text-brand-dark/80">
-                  Propuesta orientativa para autónomos y familias. Detalle de coberturas en entrevista personalizada.
-                </p>
-                <a href="#contacto" class="pill-btn mt-4 min-h-[44px] justify-center border border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white">
-                  Solicitar info
-                </a>
-              </div>
-            </article>
-            <article class="card-surface flex flex-col overflow-hidden ring-1 ring-brand-action/25">
-              <div class="aspect-[16/10] bg-brand-dark">
+            </li>
+            <li class="leading-logo-item" style="--logo-i: 2">
+              <div
+                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+              >
                 <img
-                  src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
-                  width="800"
-                  height="500"
-                  alt=""
-                  class="h-full w-full object-cover opacity-90"
+                  src="./assets/logos/logo_axa.jpg"
+                  alt="AXA"
+                  width="200"
+                  height="80"
+                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <div class="flex flex-grow flex-col bg-brand-dark p-5 text-white">
-                <h3 class="text-white">Siniestros: te acompañamos</h3>
-                <p class="mt-2 flex-grow text-white/85">
-                  Guía paso a paso y comunicación con la compañía. Texto de ejemplo; proceso interno [RELLENAR].
-                </p>
-                <a
-                  href="#contacto"
-                  class="pill-btn mt-4 min-h-[44px] justify-center border border-white/70 text-white hover:bg-white hover:text-brand-dark"
-                >
-                  Hablar con un mediador
-                </a>
+            </li>
+            <li class="leading-logo-item" style="--logo-i: 3">
+              <div
+                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+              >
+                <img
+                  src="./assets/logos/logo_dkv.jpg"
+                  alt="DKV"
+                  width="200"
+                  height="80"
+                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-            </article>
-          </div>
+            </li>
+            <li class="leading-logo-item" style="--logo-i: 4">
+              <div
+                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+              >
+                <img
+                  src="./assets/logos/logo_generali.jpg"
+                  alt="Generali"
+                  width="200"
+                  height="80"
+                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </li>
+            <li class="leading-logo-item" style="--logo-i: 5">
+              <div
+                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+              >
+                <img
+                  src="./assets/logos/logo_mapfre.jpg"
+                  alt="Mapfre"
+                  width="200"
+                  height="80"
+                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </li>
+            <li class="leading-logo-item" style="--logo-i: 6">
+              <div
+                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+              >
+                <img
+                  src="./assets/logos/logo_pelayo.jpg"
+                  alt="Pelayo"
+                  width="200"
+                  height="80"
+                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </li>
+            <li class="leading-logo-item" style="--logo-i: 7">
+              <div
+                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+              >
+                <img
+                  src="./assets/logos/logo_reale.jpg"
+                  alt="Reale"
+                  width="200"
+                  height="80"
+                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </li>
+            <li class="leading-logo-item" style="--logo-i: 8">
+              <div
+                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+              >
+                <img
+                  src="./assets/logos/logo_zurich.jpg"
+                  alt="Zurich"
+                  width="200"
+                  height="80"
+                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -661,6 +711,82 @@
           </div>
         </div>
       </section>
+
+      <!-- 9 Destacados (encima del pie) -->
+      <section class="border-t border-brand-line bg-white py-12 md:py-16" aria-labelledby="titulo-destacados">
+        <div class="container-page">
+          <h2 id="titulo-destacados" class="mb-8 text-center font-display">Te puede interesar</h2>
+          <div class="grid gap-6 lg:grid-cols-3">
+            <article class="card-surface flex flex-col overflow-hidden">
+              <div class="aspect-[16/10] bg-brand-muted">
+                <img
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+                  width="800"
+                  height="500"
+                  alt=""
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="flex flex-grow flex-col p-5">
+                <h3>Pack familia y hogar</h3>
+                <p class="mt-2 flex-grow text-brand-dark/80">
+                  Texto promocional genérico. Condiciones y vigencia a definir por la correduría. Sin cifras contractuales en esta demo.
+                </p>
+                <a href="#contacto" class="pill-btn mt-4 min-h-[44px] justify-center bg-brand-action text-white hover:bg-brand-dark"> Me interesa </a>
+              </div>
+            </article>
+            <article class="card-surface flex flex-col overflow-hidden">
+              <div class="aspect-[16/10] bg-brand-muted">
+                <img
+                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
+                  width="800"
+                  height="500"
+                  alt=""
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="flex flex-grow flex-col p-5">
+                <h3>Salud y bienestar</h3>
+                <p class="mt-2 flex-grow text-brand-dark/80">
+                  Propuesta orientativa para autónomos y familias. Detalle de coberturas en entrevista personalizada.
+                </p>
+                <a href="#contacto" class="pill-btn mt-4 min-h-[44px] justify-center border border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white">
+                  Solicitar info
+                </a>
+              </div>
+            </article>
+            <article class="card-surface flex flex-col overflow-hidden ring-1 ring-brand-action/25">
+              <div class="aspect-[16/10] bg-brand-dark">
+                <img
+                  src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
+                  width="800"
+                  height="500"
+                  alt=""
+                  class="h-full w-full object-cover opacity-90"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="flex flex-grow flex-col bg-brand-dark p-5 text-white">
+                <h3 class="text-white">Siniestros: te acompañamos</h3>
+                <p class="mt-2 flex-grow text-white/85">
+                  Guía paso a paso y comunicación con la compañía. Texto de ejemplo; proceso interno [RELLENAR].
+                </p>
+                <a
+                  href="#contacto"
+                  class="pill-btn mt-4 min-h-[44px] justify-center border border-white/70 text-white hover:bg-white hover:text-brand-dark"
+                >
+                  Hablar con un mediador
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="bg-brand-dark text-white">
@@ -704,6 +830,28 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function () {
+        var grid = document.getElementById("leading-logos");
+        if (!grid) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          grid.classList.add("is-visible");
+          return;
+        }
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                grid.classList.add("is-visible");
+                observer.disconnect();
+              }
+            });
+          },
+          { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+        );
+        observer.observe(grid);
+      })();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
   </body>

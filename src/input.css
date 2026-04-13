@@ -137,4 +137,27 @@
     border-width: 0;
     @apply rounded-full bg-brand-action font-semibold text-white shadow-lg outline-none ring-2 ring-white ring-offset-2 ring-offset-brand-action;
   }
+
+  /* Compañías colaboradoras: entrada escalonada al entrar en vista */
+  .leading-logos-grid .leading-logo-item {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    transition:
+      opacity 0.55s ease,
+      transform 0.55s ease;
+  }
+
+  .leading-logos-grid.is-visible .leading-logo-item {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: calc(var(--logo-i, 0) * 70ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .leading-logos-grid .leading-logo-item {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
 }
