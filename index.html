@@ -32,45 +32,50 @@
 
     <header class="sticky top-0 z-50 border-b border-brand-line/80 bg-white/95 backdrop-blur">
       <nav class="container-page border-b border-transparent py-3">
-        <div class="flex flex-wrap items-center justify-between gap-4">
-          <a href="#inicio" class="flex items-center gap-2 rounded-lg focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action">
-            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-dark text-white" aria-hidden="true">
-              <i class="ph ph-shield-check text-[22px]"></i>
-            </span>
-            <span class="font-display font-bold leading-tight text-brand-dark">
-              <span class="block">Susana Lujan Seguros</span>
-              <span class="block font-sans font-medium text-brand-action">Rosillo Hnos.</span>
-            </span>
-          </a>
+        <div class="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-4">
+          <div class="flex min-w-0 items-center justify-between gap-3 md:contents">
+            <a
+              href="#inicio"
+              class="flex min-w-0 flex-1 items-center gap-2 rounded-lg focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action md:min-w-0 md:flex-initial"
+            >
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-dark text-white" aria-hidden="true">
+                <i class="ph ph-shield-check text-[22px]"></i>
+              </span>
+              <span class="min-w-0 font-display font-bold leading-tight text-brand-dark">
+                <span class="block">Susana Lujan Seguros</span>
+                <span class="block font-sans font-medium text-brand-action">Rosillo Hnos.</span>
+              </span>
+            </a>
 
-          <div class="flex items-center gap-3 md:order-2">
-            <a
-              class="hidden items-center gap-2 rounded-full border border-brand-line px-3 py-2 font-medium text-brand-dark hover:border-brand-action/50 lg:inline-flex"
-              href="tel:+34960645866"
-              aria-label="Llamar por teléfono"
-            >
-              <i class="ph ph-phone text-brand-action text-[18px]" aria-hidden="true"></i>
-              <span>960 64 58 66</span>
-            </a>
-            <a
-              href="#contacto"
-              class="pill-btn bg-brand-action text-white shadow-sm hover:bg-brand-dark focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action"
-            >
-              Pedir información
-            </a>
-            <button
-              type="button"
-              data-collapse-toggle="navbar-main"
-              class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-brand-line p-2 text-brand-dark hover:bg-brand-muted md:hidden"
-              aria-controls="navbar-main"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Abrir menú principal</span>
-              <i class="ph ph-list text-[24px]" aria-hidden="true"></i>
-            </button>
+            <div class="flex shrink-0 items-center gap-3 md:order-2">
+              <a
+                class="hidden items-center gap-2 rounded-full border border-brand-line px-3 py-2 font-medium text-brand-dark hover:border-brand-action/50 lg:inline-flex"
+                href="tel:+34960645866"
+                aria-label="Llamar por teléfono"
+              >
+                <i class="ph ph-phone text-brand-action text-[18px]" aria-hidden="true"></i>
+                <span>960 64 58 66</span>
+              </a>
+              <a
+                href="#contacto"
+                class="pill-btn hidden bg-brand-action text-white shadow-sm hover:bg-brand-dark focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action md:inline-flex"
+              >
+                Pedir información
+              </a>
+              <button
+                type="button"
+                data-collapse-toggle="navbar-main"
+                class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-brand-line p-2 text-brand-dark hover:bg-brand-muted md:hidden"
+                aria-controls="navbar-main"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Abrir menú principal</span>
+                <i class="ph ph-list text-[24px]" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
 
-          <div class="hidden w-full md:block md:w-auto" id="navbar-main">
+          <div class="hidden w-full md:order-1 md:block md:w-auto" id="navbar-main">
             <ul
               class="mt-4 flex flex-col gap-1 rounded-card border border-brand-line/80 bg-brand-muted/40 p-3 font-medium md:mt-0 md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0"
             >
