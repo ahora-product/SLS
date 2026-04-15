@@ -8,11 +8,13 @@
       name="description"
       content="Susana Lujan Seguros, correduría en Almussafes (Valencia): asesoramiento personalizado, comparativa de coberturas y acompañamiento en siniestros. Solicita información sin compromiso."
     />
-    <!-- Tipografías: sans (UI) + serif para acentos en titulares. Tamaños fijos vía CSS base, sin escalado responsive. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Estilos de marca primero. display=swap: Playfair (cursivas en titulares) debe poder sustituir al fallback. -->
+    <link href="./assets/css/output.css" rel="stylesheet" />
+    <!-- Tipografías: sans (UI) + serif para acentos en titulares. Tamaños fijos vía CSS base, sin escalado responsive. -->
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
       rel="stylesheet"
     />
     <!-- Phosphor Icons — peso Regular, coherente en todo el sitio -->
@@ -21,39 +23,39 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     />
-    <link href="./assets/css/output.css" rel="stylesheet" />
   </head>
-  <body class="bg-white text-brand-dark">
+  <body class="bg-brand-canvas text-brand-dark">
     <!--
       Librerías / patrones:
       - Flowbite: barra de navegación colapsable (móvil) + atributos data-collapse (JS incluido al final).
     -->
     <a href="#contenido-principal" class="skip-link">Ir al contenido</a>
 
-    <header class="sticky top-0 z-50 border-b border-brand-line/80 bg-white/95 backdrop-blur">
-      <nav class="container-page border-b border-transparent py-3">
+    <div class="page-shell">
+    <header class="site-header is-header-anim section-block-header sticky z-50 mb-6 md:mb-8">
+      <nav class="container-page py-3">
         <div class="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-4">
           <div class="flex min-w-0 items-center justify-between gap-3 md:contents">
             <a
               href="#inicio"
               class="flex min-w-0 flex-1 items-center gap-2 rounded-lg focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action md:min-w-0 md:flex-initial"
             >
-              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-dark text-white" aria-hidden="true">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/12 text-white ring-1 ring-white/15" aria-hidden="true">
                 <i class="ph ph-shield-check text-[22px]"></i>
               </span>
-              <span class="min-w-0 font-display font-bold leading-tight text-brand-dark">
+              <span class="min-w-0 font-display font-bold leading-tight text-white">
                 <span class="block">Susana Lujan Seguros</span>
-                <span class="block font-sans font-medium text-brand-action">Rosillo Hnos.</span>
+                <span class="block font-sans font-medium text-[#c5f0c5]">Rosillo Hnos.</span>
               </span>
             </a>
 
             <div class="flex shrink-0 items-center gap-3 md:order-2">
               <a
-                class="hidden items-center gap-2 rounded-full border border-brand-line px-3 py-2 font-medium text-brand-dark hover:border-brand-action/50 lg:inline-flex"
+                class="hidden items-center gap-2 rounded-full border border-white/20 px-3 py-2 font-medium text-white/90 hover:border-white/40 hover:text-white lg:inline-flex"
                 href="tel:+34960645866"
                 aria-label="Llamar por teléfono"
               >
-                <i class="ph ph-phone text-brand-action text-[18px]" aria-hidden="true"></i>
+                <i class="ph ph-phone text-[#8fd98f] text-[18px]" aria-hidden="true"></i>
                 <span>960 64 58 66</span>
               </a>
               <a
@@ -65,7 +67,7 @@
               <button
                 type="button"
                 data-collapse-toggle="navbar-main"
-                class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-brand-line p-2 text-brand-dark hover:bg-brand-muted md:hidden"
+                class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/25 p-2 text-white hover:bg-white/10 md:hidden"
                 aria-controls="navbar-main"
                 aria-expanded="false"
               >
@@ -77,42 +79,42 @@
 
           <div class="hidden w-full md:order-1 md:block md:w-auto" id="navbar-main">
             <ul
-              class="mt-4 flex flex-col gap-1 rounded-card border border-brand-line/80 bg-brand-muted/40 p-3 font-medium md:mt-0 md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0"
+              class="mt-4 flex flex-col gap-1 rounded-card border border-white/15 bg-white/5 p-3 font-medium text-white/90 md:mt-0 md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0"
             >
               <li>
                 <a
                   href="#inicio"
-                  class="block rounded-full px-4 py-3 hover:bg-white hover:text-brand-action md:py-2"
+                  class="block rounded-full px-4 py-3 hover:bg-white/10 hover:text-white md:py-2"
                   >Inicio</a
                 >
               </li>
               <li>
                 <a
                   href="#seguros"
-                  class="block rounded-full px-4 py-3 hover:bg-white hover:text-brand-action md:py-2"
+                  class="block rounded-full px-4 py-3 hover:bg-white/10 hover:text-white md:py-2"
                   >Seguros</a
                 >
               </li>
               <li>
                 <a
                   href="#nosotros"
-                  class="block rounded-full px-4 py-3 hover:bg-white hover:text-brand-action md:py-2"
+                  class="block rounded-full px-4 py-3 hover:bg-white/10 hover:text-white md:py-2"
                   >Nosotros</a
                 >
               </li>
               <li>
                 <a
                   href="#contacto"
-                  class="block rounded-full px-4 py-3 hover:bg-white hover:text-brand-action md:py-2"
+                  class="block rounded-full px-4 py-3 hover:bg-white/10 hover:text-white md:py-2"
                   >Contacto</a
                 >
               </li>
               <li class="md:hidden">
                 <a
                   href="tel:+34960645866"
-                  class="flex items-center gap-2 rounded-full px-4 py-3 hover:bg-white hover:text-brand-action"
+                  class="flex items-center gap-2 rounded-full px-4 py-3 hover:bg-white/10 hover:text-white"
                 >
-                  <i class="ph ph-phone text-brand-action" aria-hidden="true"></i>
+                  <i class="ph ph-phone text-[#8fd98f]" aria-hidden="true"></i>
                   Teléfono 960 64 58 66
                 </a>
               </li>
@@ -122,55 +124,61 @@
       </nav>
     </header>
 
-    <main id="contenido-principal">
-      <!-- 1 Hero -->
-      <section id="inicio" class="bg-white" aria-labelledby="titular-hero">
-        <div class="container-page pt-8 pb-12 md:pt-10 md:pb-16">
-          <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
-            <div class="lg:col-span-6">
-              <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-line bg-brand-soft/80 px-3 py-1 font-medium text-brand-dark">
-                <i class="ph ph-seal-check text-brand-action" aria-hidden="true"></i>
-                Mediación de seguros · España
-              </p>
-              <h1 id="titular-hero" class="mb-4 max-w-xl">
-                Protege lo que importa,
-                <span class="heading-accent hero-title-line">con el mejor equipo a tu lado</span>
-              </h1>
-              <p class="mb-6 max-w-xl text-brand-dark/85">
-                Te ayudamos a elegir coberturas adecuadas, comparar alternativas con criterio y gestionar tu seguro con un trato cercano y profesional.
-              </p>
-              <div class="flex flex-wrap items-center gap-3">
-                <a
-                  href="#contacto"
-                  class="pill-btn min-h-[44px] bg-brand-action px-6 text-white hover:bg-brand-dark focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action"
-                >
-                  Pedir información
-                  <i class="ph ph-arrow-right" aria-hidden="true"></i>
-                </a>
-                <a
-                  href="#seguros"
-                  class="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-brand-dark px-5 py-2.5 font-semibold text-brand-dark hover:border-brand-action hover:text-brand-action"
-                >
-                  Nuestros seguros
-                  <i class="ph ph-caret-right text-brand-action" aria-hidden="true"></i>
-                </a>
+    <main id="contenido-principal" class="space-y-6 md:space-y-8">
+      <!-- 1 Hero: sin padding en section (evita “marco” canvas); solo la card blanca. Ritmo: mb del header + space-y del main. -->
+      <section
+        id="inicio"
+        class="relative flex w-full flex-col lg:min-h-[calc(100dvh-env(safe-area-inset-top,0px)-env(safe-area-inset-bottom,0px)-var(--hero-desktop-chrome))]"
+        aria-labelledby="titular-hero"
+      >
+        <div class="card-surface flex min-h-0 w-full flex-1 flex-col overflow-hidden p-0 shadow-sm">
+          <div
+            class="grid min-h-0 min-w-0 flex-1 grid-cols-1 gap-0 max-lg:min-h-[min(32rem,52vh)] lg:grid-cols-2 lg:items-stretch lg:min-h-0"
+          >
+            <div class="hero-copy-inset flex min-h-0 flex-col justify-center lg:h-full">
+              <div class="max-w-xl">
+                <p class="reveal mb-3 inline-flex items-center gap-2 rounded-full border border-brand-line bg-brand-muted px-3 py-1 font-medium text-brand-dark shadow-sm" style="--reveal-i: 0">
+                  <i class="ph ph-seal-check text-brand-action" aria-hidden="true"></i>
+                  Mediación de seguros · España
+                </p>
+                <h1 id="titular-hero" class="reveal mb-4" style="--reveal-i: 1">
+                  Protege lo que importa, <span class="heading-accent">con el mejor equipo a tu lado</span>
+                </h1>
+                <p class="reveal mb-6 text-brand-dark/85" style="--reveal-i: 2">
+                  Te ayudamos a elegir coberturas adecuadas, comparar alternativas con criterio y gestionar tu seguro con un trato cercano y profesional.
+                </p>
+                <div class="reveal flex flex-wrap items-center gap-3" style="--reveal-i: 3">
+                  <a
+                    href="#contacto"
+                    class="pill-btn min-h-[44px] bg-brand-action px-6 text-white shadow-sm hover:bg-brand-dark focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action"
+                  >
+                    Pedir información
+                    <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="#seguros"
+                    class="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-brand-dark px-5 py-2.5 font-semibold text-brand-dark shadow-sm hover:border-brand-action hover:text-brand-action"
+                  >
+                    Nuestros seguros
+                    <i class="ph ph-caret-right text-brand-action" aria-hidden="true"></i>
+                  </a>
+                </div>
               </div>
             </div>
-            <div class="lg:col-span-6">
-              <div class="relative overflow-hidden rounded-hero bg-brand-soft shadow-sm ring-1 ring-brand-line/60">
+            <div class="flex min-h-0 min-w-0 flex-col p-[16px] lg:h-full">
+              <div
+                class="relative aspect-[5/4] min-h-[10rem] w-full min-w-0 flex-1 overflow-hidden rounded-[16px] bg-brand-muted max-lg:max-h-[min(22rem,48vh)] lg:aspect-auto lg:max-h-none lg:min-h-0 lg:flex-1"
+              >
                 <img
-                  src="assets/images/hero-cabecera.png"
+                  src="./assets/images/hero-cabecera.png"
                   width="1024"
                   height="1024"
-                  alt="Mujer sonriente conduciendo con el cinturón de seguridad abrochado"
-                  class="aspect-square w-full object-cover"
+                  alt="Correduría de seguros: asesoramiento y atención personalizada"
+                  class="absolute inset-0 h-full w-full object-cover object-center"
                   loading="eager"
                   decoding="async"
+                  fetchpriority="high"
                 />
-                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark/90 to-transparent p-6 text-white">
-                  <p class="font-display font-semibold">Asesoramiento independiente</p>
-                  <p class="mt-1 max-w-md text-white/90">Defendemos tus intereses frente a la compañía aseguradora.</p>
-                </div>
               </div>
             </div>
           </div>
@@ -178,72 +186,72 @@
       </section>
 
       <!-- 2 Grid tipos de seguro -->
-      <section id="seguros" class="bg-brand-soft py-12 md:py-16" aria-labelledby="titulo-seguros">
+      <section id="seguros" class="section-block section-seguros-dark py-12 md:py-16" aria-labelledby="titulo-seguros">
         <div class="container-page">
           <div class="mx-auto mb-10 max-w-3xl text-center">
-            <h2 id="titulo-seguros">¿Cómo podemos <span class="heading-accent">ayudarte</span>?</h2>
-            <p class="mt-3 text-brand-dark/80">
+            <h2 id="titulo-seguros" class="seguros-heading reveal" style="--reveal-i: 0">¿Cómo podemos <span class="heading-accent">ayudarte</span>?</h2>
+            <p class="seguros-lead mt-3 reveal" style="--reveal-i: 1">
               Cada seguro, explicado con claridad y con comparativa de alternativas. Elige lo que necesitas y hablamos.
             </p>
           </div>
 
           <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 2">
               <i class="ph ph-car text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Seguro de coche</h3>
               <p class="mt-2 text-brand-dark/80">Terceros, ampliado y todo riesgo. Asistencia y sustitución.</p>
             </li>
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 3">
               <i class="ph ph-calendar-dots text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Seguro por días</h3>
               <p class="mt-2 text-brand-dark/80">Coberturas puntuales para necesidades temporales.</p>
             </li>
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 4">
               <i class="ph ph-flower-lotus text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Decesos</h3>
               <p class="mt-2 text-brand-dark/80">Previsión y servicio para familiares.</p>
             </li>
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 5">
               <i class="ph ph-heart text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Vida</h3>
               <p class="mt-2 text-brand-dark/80">Protección familiar y patrimonial.</p>
             </li>
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 6">
               <i class="ph ph-paw-print text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Mascotas</h3>
               <p class="mt-2 text-brand-dark/80">Veterinario, responsabilidad civil y asistencia.</p>
             </li>
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 7">
               <i class="ph ph-stethoscope text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Salud</h3>
               <p class="mt-2 text-brand-dark/80">Cuadro médico, reembolso y bienestar.</p>
             </li>
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 8">
               <i class="ph ph-airplane-tilt text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Viaje</h3>
               <p class="mt-2 text-brand-dark/80">Asistencia en viaje, anulación y equipaje.</p>
             </li>
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 9">
               <i class="ph ph-umbrella text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Ocio</h3>
               <p class="mt-2 text-brand-dark/80">Actividades, deportes y responsabilidad civil.</p>
             </li>
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 10">
               <i class="ph ph-house-line text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Hogar</h3>
               <p class="mt-2 text-brand-dark/80">Continente, contenido y extensiones.</p>
             </li>
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 11">
               <i class="ph ph-buildings text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Comunidad</h3>
               <p class="mt-2 text-brand-dark/80">Comunidades de propietarios y edificios.</p>
             </li>
-            <li class="card-surface p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 12">
               <i class="ph ph-briefcase text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">Pyme y negocio</h3>
               <p class="mt-2 text-brand-dark/80">Multiriesgo, RC profesional y ciberriesgos.</p>
             </li>
-            <li class="card-surface border-brand-action/30 bg-brand-soft/50 p-5 transition-shadow duration-200 hover:shadow-md">
+            <li class="reveal card-surface border-brand-action/40 p-5 motion-card-hover hover:shadow-md" style="--reveal-i: 13">
               <i class="ph ph-chats-circle text-brand-action text-[22px]" aria-hidden="true"></i>
               <h3 class="mt-3">¿No lo encuentras?</h3>
               <p class="mt-2 text-brand-dark/80">Cuéntanos tu caso y buscamos solución.</p>
@@ -257,9 +265,13 @@
       </section>
 
       <!-- 3 Compañías colaboradoras -->
-      <section class="bg-white py-12 md:py-16" aria-labelledby="titulo-aseguradoras">
+      <section class="section-block bg-white py-12 md:py-16" aria-labelledby="titulo-aseguradoras">
         <div class="container-page">
-          <h2 id="titulo-aseguradoras" class="mb-8 text-center font-sans text-[26px] font-bold leading-tight tracking-tight text-brand-dark">
+          <h2
+            id="titulo-aseguradoras"
+            class="reveal mb-8 text-center font-sans text-[26px] font-bold leading-tight tracking-tight text-brand-dark"
+            style="--reveal-i: 0"
+          >
             Trabajamos con compañías líderes
           </h2>
           <ul
@@ -269,14 +281,14 @@
           >
             <li class="leading-logo-item" style="--logo-i: 0">
               <div
-                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+                class="flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4"
               >
                 <img
                   src="./assets/logos/logo_adeslas.jpg"
                   alt="Adeslas"
                   width="200"
                   height="80"
-                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  class="max-h-[72px] w-auto max-w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
@@ -284,14 +296,14 @@
             </li>
             <li class="leading-logo-item" style="--logo-i: 1">
               <div
-                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+                class="flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4"
               >
                 <img
                   src="./assets/logos/logo_allianz.jpg"
                   alt="Allianz"
                   width="200"
                   height="80"
-                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  class="max-h-[72px] w-auto max-w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
@@ -299,14 +311,14 @@
             </li>
             <li class="leading-logo-item" style="--logo-i: 2">
               <div
-                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+                class="flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4"
               >
                 <img
                   src="./assets/logos/logo_axa.jpg"
                   alt="AXA"
                   width="200"
                   height="80"
-                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  class="max-h-[72px] w-auto max-w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
@@ -314,14 +326,14 @@
             </li>
             <li class="leading-logo-item" style="--logo-i: 3">
               <div
-                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+                class="flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4"
               >
                 <img
                   src="./assets/logos/logo_dkv.jpg"
                   alt="DKV"
                   width="200"
                   height="80"
-                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  class="max-h-[72px] w-auto max-w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
@@ -329,14 +341,14 @@
             </li>
             <li class="leading-logo-item" style="--logo-i: 4">
               <div
-                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+                class="flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4"
               >
                 <img
                   src="./assets/logos/logo_generali.jpg"
                   alt="Generali"
                   width="200"
                   height="80"
-                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  class="max-h-[72px] w-auto max-w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
@@ -344,14 +356,14 @@
             </li>
             <li class="leading-logo-item" style="--logo-i: 5">
               <div
-                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+                class="flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4"
               >
                 <img
                   src="./assets/logos/logo_mapfre.jpg"
                   alt="Mapfre"
                   width="200"
                   height="80"
-                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  class="max-h-[72px] w-auto max-w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
@@ -359,14 +371,14 @@
             </li>
             <li class="leading-logo-item" style="--logo-i: 6">
               <div
-                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+                class="flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4"
               >
                 <img
                   src="./assets/logos/logo_pelayo.jpg"
                   alt="Pelayo"
                   width="200"
                   height="80"
-                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  class="max-h-[72px] w-auto max-w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
@@ -374,14 +386,14 @@
             </li>
             <li class="leading-logo-item" style="--logo-i: 7">
               <div
-                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+                class="flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4"
               >
                 <img
                   src="./assets/logos/logo_reale.jpg"
                   alt="Reale"
                   width="200"
                   height="80"
-                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  class="max-h-[72px] w-auto max-w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
@@ -389,14 +401,14 @@
             </li>
             <li class="leading-logo-item" style="--logo-i: 8">
               <div
-                class="group flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4 transition-shadow duration-200 hover:shadow-sm"
+                class="flex min-h-[88px] items-center justify-center rounded-card border border-dashed border-brand-line bg-white px-4 py-4"
               >
                 <img
                   src="./assets/logos/logo_zurich.jpg"
                   alt="Zurich"
                   width="200"
                   height="80"
-                  class="max-h-[72px] w-auto max-w-full object-contain grayscale transition-[filter] duration-300 ease-out group-hover:grayscale-0"
+                  class="max-h-[72px] w-auto max-w-full object-contain"
                   loading="lazy"
                   decoding="async"
                 />
@@ -407,16 +419,16 @@
       </section>
 
       <!-- 4 Te llamamos -->
-      <section id="te-llamamos" class="bg-brand-soft py-12 md:py-16" aria-labelledby="titulo-te-llamamos">
+      <section id="te-llamamos" class="section-block border-brand-line/50 bg-brand-soft py-12 md:py-16" aria-labelledby="titulo-te-llamamos">
         <div class="container-page">
           <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
+            <div class="reveal" style="--reveal-i: 0">
               <h2 id="titulo-te-llamamos">Te llamamos gratis, <span class="heading-accent">sin compromiso</span></h2>
               <p class="mt-3 text-brand-dark/80">
-                Formulario de demostración: los datos no se envían a ningún servidor. Sustituye <code class="rounded bg-brand-muted px-1">action="#"</code> cuando tengas backend o herramienta de captación.
+                Deja tus datos y te devolvemos la llamada en horario comercial. En esta maqueta el formulario no envía nada; cuando conectes tu CRM o tu correo, solo tendrás que cambiar la <code class="rounded bg-brand-muted px-1">action</code> del envío.
               </p>
             </div>
-            <form class="card-surface space-y-4 p-5 md:p-6" action="#" method="post">
+            <form class="reveal card-surface space-y-4 p-5 md:p-6" style="--reveal-i: 1" action="#" method="post">
               <div>
                 <label for="call-name" class="mb-1 block font-semibold text-brand-dark">Nombre y apellidos</label>
                 <input
@@ -451,21 +463,21 @@
                 <label for="call-privacy" class="text-brand-dark/90">
                   He leído la información sobre protección de datos en la
                   <a href="./privacidad.html" class="font-semibold text-brand-action underline-offset-2 hover:underline">política de privacidad</a>
-                  (texto legal a completar).
+                  y autorizo que me contacten para seguir mi solicitud.
                 </label>
               </div>
-              <button type="submit" class="pill-btn min-h-[48px] w-full bg-brand-action text-white hover:bg-brand-dark">Enviar (demo)</button>
-              <p class="text-center text-brand-dark/70" role="status">Vista previa estática: el envío está desactivado.</p>
+              <button type="submit" class="pill-btn min-h-[48px] w-full bg-brand-action text-white hover:bg-brand-dark">Solicitar llamada</button>
+              <p class="text-center text-brand-dark/70" role="status">Vista previa: el botón no envía datos hasta que configures el servidor.</p>
             </form>
           </div>
         </div>
       </section>
 
-      <!-- 5 Por qué elegirnos + stats placeholder -->
-      <section id="nosotros" class="bg-white py-12 md:py-16" aria-labelledby="titulo-por-que">
+      <!-- 5 Por qué elegirnos + cifras de ejemplo para maquetación -->
+      <section id="nosotros" class="section-block bg-white py-12 md:py-16" aria-labelledby="titulo-por-que">
         <div class="container-page">
           <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
-            <div>
+            <div class="reveal" style="--reveal-i: 0">
               <h2 id="titulo-por-que">¿Por qué <span class="heading-accent">elegirnos</span>?</h2>
               <p class="mt-4 text-brand-dark/85">
                 Somos mediadores: analizamos tu situación, comparamos productos de distintas aseguradoras y te ayudamos antes y después de contratar. Priorizamos transparencia, tiempos de respuesta y un trato humano.
@@ -482,29 +494,57 @@
               </a>
             </div>
             <div class="grid gap-4 sm:grid-cols-2">
-              <div class="card-surface p-5">
+              <div class="reveal card-surface p-5" style="--reveal-i: 1">
                 <i class="ph ph-users-three text-brand-action text-[24px]" aria-hidden="true"></i>
                 <h3 class="mt-3">Personas atendidas</h3>
-                <p class="mt-2 font-display text-[32px] font-bold text-brand-dark" aria-label="Dato pendiente de completar">[RELLENAR]</p>
-                <p class="text-brand-dark/75">Cifra interna a aportar por el cliente.</p>
+                <p
+                  class="stat-counter mt-2 min-h-[40px] font-display text-[32px] tabular-nums"
+                  data-count-target="520"
+                  data-count-prefix="+"
+                >
+                  <span class="stat-counter__value" aria-hidden="true">+0</span>
+                  <span class="sr-only">Cifra ilustrativa: más de 520 personas atendidas.</span>
+                </p>
+                <p class="text-brand-dark/75">Familias y autónomos asesorados en los últimos años (dato ilustrativo).</p>
               </div>
-              <div class="card-surface p-5">
+              <div class="reveal card-surface p-5" style="--reveal-i: 2">
                 <i class="ph ph-file-text text-brand-action text-[24px]" aria-hidden="true"></i>
                 <h3 class="mt-3">Pólizas gestionadas</h3>
-                <p class="mt-2 font-display text-[32px] font-bold text-brand-dark">[RELLENAR]</p>
-                <p class="text-brand-dark/75">—</p>
+                <p
+                  class="stat-counter mt-2 min-h-[40px] font-display text-[32px] tabular-nums"
+                  data-count-target="1100"
+                  data-count-prefix="+"
+                >
+                  <span class="stat-counter__value" aria-hidden="true">+0</span>
+                  <span class="sr-only">Cifra ilustrativa: más de 1.100 pólizas gestionadas.</span>
+                </p>
+                <p class="text-brand-dark/75">Renovaciones, altas y revisiones de cobertura (dato ilustrativo).</p>
               </div>
-              <div class="card-surface p-5">
+              <div class="reveal card-surface p-5" style="--reveal-i: 3">
                 <i class="ph ph-hourglass-high text-brand-action text-[24px]" aria-hidden="true"></i>
                 <h3 class="mt-3">Años de experiencia</h3>
-                <p class="mt-2 font-display text-[32px] font-bold text-brand-dark">[RELLENAR]</p>
-                <p class="text-brand-dark/75">—</p>
+                <p
+                  class="stat-counter mt-2 min-h-[40px] font-display text-[32px] tabular-nums"
+                  data-count-target="15"
+                  data-count-prefix="+"
+                >
+                  <span class="stat-counter__value" aria-hidden="true">+0</span>
+                  <span class="sr-only">Cifra ilustrativa: más de 15 años de experiencia.</span>
+                </p>
+                <p class="text-brand-dark/75">Trayectoria en mediación y atención en la comarca (dato ilustrativo).</p>
               </div>
-              <div class="card-surface p-5">
+              <div class="reveal card-surface p-5" style="--reveal-i: 4">
                 <i class="ph ph-handshake text-brand-action text-[24px]" aria-hidden="true"></i>
                 <h3 class="mt-3">Siniestros acompañados</h3>
-                <p class="mt-2 font-display text-[32px] font-bold text-brand-dark">[RELLENAR]</p>
-                <p class="text-brand-dark/75">Periodo de referencia [RELLENAR].</p>
+                <p
+                  class="stat-counter mt-2 min-h-[40px] font-display text-[32px] tabular-nums"
+                  data-count-target="180"
+                  data-count-prefix="+"
+                >
+                  <span class="stat-counter__value" aria-hidden="true">+0</span>
+                  <span class="sr-only">Cifra ilustrativa: más de 180 siniestros acompañados.</span>
+                </p>
+                <p class="text-brand-dark/75">Expedientes seguidos de principio a fin, 2019–2025 (dato ilustrativo).</p>
               </div>
             </div>
           </div>
@@ -512,40 +552,42 @@
       </section>
 
       <!-- 6 Testimonios -->
-      <section class="bg-brand-soft py-12 md:py-16" aria-labelledby="titulo-testimonios">
+      <section class="section-block section-testimonios-dark py-12 md:py-16" aria-labelledby="titulo-testimonios">
         <div class="container-page">
-          <h2 id="titulo-testimonios" class="mb-2 text-center font-display">Confían en nosotros</h2>
-          <p class="mb-8 text-center text-brand-dark/75">Textos de ejemplo; sustituir por opiniones reales con consentimiento expreso.</p>
+          <h2 id="titulo-testimonios" class="testimonios-heading reveal mb-2 text-center font-display" style="--reveal-i: 0">Confían en nosotros</h2>
+          <p class="testimonios-lead reveal mb-8 text-center" style="--reveal-i: 1">
+            Opiniones ficticias para la maqueta; en producción conviene publicar testimonios reales con permiso por escrito.
+          </p>
           <div class="grid gap-6 lg:grid-cols-3">
-            <figure class="card-surface p-5">
+            <figure class="testimonial-card reveal card-surface p-5" style="--reveal-i: 2">
               <blockquote class="text-brand-dark/85">
                 <p>
-                  “Ejemplo: la gestión fue clara desde el primer día. Me explicaron exclusiones y asistencia sin prisas.”
+                  “Renové el coche y el hogar el mismo mes. Me compararon tres compañías, entendí franquicias y asistencia en carretera, y firmé con calma.”
                 </p>
               </blockquote>
-              <figcaption class="mt-4 font-semibold text-brand-dark">Cliente A — <span class="font-normal text-brand-dark/70">placeholder</span></figcaption>
+              <figcaption class="mt-4 font-semibold text-brand-dark">Laura M. — <span class="font-normal text-brand-dark/70">Almussafes</span></figcaption>
             </figure>
-            <figure class="card-surface p-5">
+            <figure class="testimonial-card reveal card-surface p-5" style="--reveal-i: 3">
               <blockquote class="text-brand-dark/85">
-                <p>“Ejemplo: en el siniestro me indicaron los pasos y la documentación necesaria. Me sentí acompañado.”</p>
+                <p>“Tuve un golpe leve en un parking. Me dijeron exactamente qué fotos hacían falta y en qué plazo pasaba el perito. Todo muy ordenado.”</p>
               </blockquote>
-              <figcaption class="mt-4 font-semibold text-brand-dark">Cliente B — <span class="font-normal text-brand-dark/70">placeholder</span></figcaption>
+              <figcaption class="mt-4 font-semibold text-brand-dark">Javier R. — <span class="font-normal text-brand-dark/70">Silla</span></figcaption>
             </figure>
-            <figure class="card-surface p-5">
+            <figure class="testimonial-card reveal card-surface p-5" style="--reveal-i: 4">
               <blockquote class="text-brand-dark/85">
-                <p>“Ejemplo: compararon varias opciones y entendieron mi presupuesto. Sin letra pequeña ‘a ciegas’.”</p>
+                <p>“Soy autónomo y necesitaba salud con cuadro médico cercano. Ajustaron la propuesta a mi facturación y a mis visitas habituales.”</p>
               </blockquote>
-              <figcaption class="mt-4 font-semibold text-brand-dark">Cliente C — <span class="font-normal text-brand-dark/70">placeholder</span></figcaption>
+              <figcaption class="mt-4 font-semibold text-brand-dark">Elena V. — <span class="font-normal text-brand-dark/70">Alzira</span></figcaption>
             </figure>
           </div>
         </div>
       </section>
 
       <!-- 7 Contacto + formulario -->
-      <section id="contacto" class="bg-white py-12 md:py-16" aria-labelledby="titulo-contacto">
+      <section id="contacto" class="section-block bg-white py-12 md:py-16" aria-labelledby="titulo-contacto">
         <div class="container-page">
           <div class="grid gap-10 lg:grid-cols-2">
-            <div>
+            <div class="reveal" style="--reveal-i: 0">
               <h2 id="titulo-contacto">¿Quieres más información?</h2>
               <p class="mt-3 text-brand-dark/85">
                 Estamos a tu disposición para resolver dudas sobre coberturas, renovaciones y trámites. Visítanos en Almussafes o contáctanos por teléfono en horario de oficina.
@@ -573,14 +615,14 @@
                   <i class="ph ph-whatsapp-logo text-brand-action text-[22px]" aria-hidden="true"></i>
                   <div>
                     <p class="font-semibold">WhatsApp</p>
-                    <a class="text-brand-action hover:text-brand-dark" href="https://wa.me/[RELLENAR]" rel="noopener noreferrer">[RELLENAR]</a>
+                    <a class="text-brand-action hover:text-brand-dark" href="https://wa.me/34600111222" rel="noopener noreferrer">600 111 222 (ejemplo)</a>
                   </div>
                 </li>
                 <li class="flex gap-3">
                   <i class="ph ph-envelope-simple text-brand-action text-[22px]" aria-hidden="true"></i>
                   <div>
                     <p class="font-semibold">Email</p>
-                    <a class="break-all text-brand-action hover:text-brand-dark" href="mailto:[RELLENAR]">[RELLENAR]</a>
+                    <a class="break-all text-brand-action hover:text-brand-dark" href="mailto:hola@susanalujan-seguros.demo">hola@susanalujan-seguros.demo</a>
                   </div>
                 </li>
                 <li class="flex gap-3">
@@ -600,7 +642,7 @@
                 </li>
               </ul>
             </div>
-            <form class="card-surface space-y-4 p-5 md:p-6" action="#" method="post">
+            <form class="reveal card-surface space-y-4 p-5 md:p-6" style="--reveal-i: 1" action="#" method="post">
               <div class="grid gap-4 sm:grid-cols-2">
                 <div class="sm:col-span-2">
                   <label for="c-name" class="mb-1 block font-semibold">Nombre y apellidos</label>
@@ -669,48 +711,46 @@
                 <label for="c-privacy" class="text-brand-dark/90">
                   Acepto la
                   <a href="./privacidad.html" class="font-semibold text-brand-action underline-offset-2 hover:underline">política de privacidad</a>
-                  (texto legal a completar por el cliente).
+                  y el tratamiento de mis datos para responder a esta consulta.
                 </label>
               </div>
-              <button type="submit" class="pill-btn min-h-[48px] w-full bg-brand-action text-white hover:bg-brand-dark">Enviar (demo)</button>
-              <p class="text-center text-brand-dark/70">Formulario estático: no se transmite información.</p>
+              <button type="submit" class="pill-btn min-h-[48px] w-full bg-brand-action text-white hover:bg-brand-dark">Enviar mensaje</button>
+              <p class="text-center text-brand-dark/70">Vista previa: conecta el formulario a tu correo o CRM cuando esté listo.</p>
             </form>
           </div>
         </div>
       </section>
 
       <!-- 8 Bloques legales informativos -->
-      <section class="border-t border-brand-line bg-brand-soft py-12 md:py-14" aria-labelledby="titulo-legal-info">
+      <section class="section-block border-brand-line/50 bg-brand-soft py-12 md:py-14" aria-labelledby="titulo-legal-info">
         <div class="container-page">
           <h2 id="titulo-legal-info" class="sr-only">Información regulatoria</h2>
           <div class="grid gap-6 lg:grid-cols-3">
-            <article class="card-surface p-5">
+            <article class="reveal card-surface p-5" style="--reveal-i: 0">
               <h3 class="flex items-center gap-2">
                 <i class="ph ph-bank text-brand-action" aria-hidden="true"></i>
                 DGSFP y registro
               </h3>
               <p class="mt-3 text-brand-dark/85">
-                Texto legal a completar por el cliente. La mediación de seguros en España se supervisa por la DGSFP. Número de registro del mediador:
-                <strong>[RELLENAR]</strong>. No inventar cifras ni referencias oficiales en esta plantilla.
+                La mediación de seguros en España se supervisa por la Dirección General de Seguros y Fondos de Pensiones (DGSFP). Aquí suele figurar el número de inscripción en el Registro de Mediadores de Seguros y el de Reaseguros — sustituye este párrafo por el texto y la referencia oficial que te facilite tu asesoría.
               </p>
             </article>
-            <article class="card-surface p-5">
+            <article class="reveal card-surface p-5" style="--reveal-i: 1">
               <h3 class="flex items-center gap-2">
                 <i class="ph ph-identification-badge text-brand-action" aria-hidden="true"></i>
                 Colegiación
               </h3>
               <p class="mt-3 text-brand-dark/85">
-                Texto legal a completar por el cliente sobre colegios profesionales, códigos deontológicos y reclamaciones. Datos concretos: <strong>[RELLENAR]</strong>.
+                Si procede, indica el colegio profesional, el canal de reclamaciones y el código deontológico aplicable. Ejemplo de redacción: «Puede dirigirse al Colegio de Mediadores de Seguros de [Comunidad] para cualquier consulta disciplinaria» — adapte nombres y enlaces a su situación real.
               </p>
             </article>
-            <article class="card-surface p-5">
+            <article class="reveal card-surface p-5" style="--reveal-i: 2">
               <h3 class="flex items-center gap-2">
                 <i class="ph ph-scales text-brand-action" aria-hidden="true"></i>
                 Mediación y transparencia
               </h3>
               <p class="mt-3 text-brand-dark/85">
-                Texto legal a completar por el cliente (Ley de mediación de seguros, información precontractual, remuneración, conflicto de intereses). Referencias internas:
-                <strong>[RELLENAR]</strong>.
+                Incluya aquí la información sobre honorarios de mediación, posibles incentivos de las compañías y el deber de informar con lealtad antes de contratar. Un texto tipo sería: «Le entregamos la IPID y las condiciones generales antes de la firma» — complete con los documentos y plazos que use su despacho.
               </p>
             </article>
           </div>
@@ -718,11 +758,11 @@
       </section>
 
       <!-- 9 Destacados (encima del pie) -->
-      <section class="border-t border-brand-line bg-white py-12 md:py-16" aria-labelledby="titulo-destacados">
+      <section class="section-block bg-white py-12 md:py-16" aria-labelledby="titulo-destacados">
         <div class="container-page">
-          <h2 id="titulo-destacados" class="mb-8 text-center font-display">Te puede interesar</h2>
+          <h2 id="titulo-destacados" class="reveal mb-8 text-center font-display" style="--reveal-i: 0">Te puede interesar</h2>
           <div class="grid gap-6 lg:grid-cols-3">
-            <article class="card-surface flex flex-col overflow-hidden">
+            <article class="reveal card-surface flex flex-col overflow-hidden" style="--reveal-i: 1">
               <div class="aspect-[16/10] bg-brand-muted">
                 <img
                   src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
@@ -737,12 +777,12 @@
               <div class="flex flex-grow flex-col p-5">
                 <h3>Pack familia y hogar</h3>
                 <p class="mt-2 flex-grow text-brand-dark/80">
-                  Texto promocional genérico. Condiciones y vigencia a definir por la correduría. Sin cifras contractuales en esta demo.
+                  Une hogar (continente y contenido), responsabilidad civil y asistencia en viaje corto en una sola revisión anual. Ideal si quieres una única fecha de renovación y menos papeleo entre familiares.
                 </p>
                 <a href="#contacto" class="pill-btn mt-4 min-h-[44px] justify-center bg-brand-action text-white hover:bg-brand-dark"> Me interesa </a>
               </div>
             </article>
-            <article class="card-surface flex flex-col overflow-hidden">
+            <article class="reveal card-surface flex flex-col overflow-hidden" style="--reveal-i: 2">
               <div class="aspect-[16/10] bg-brand-muted">
                 <img
                   src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
@@ -757,15 +797,15 @@
               <div class="flex flex-grow flex-col p-5">
                 <h3>Salud y bienestar</h3>
                 <p class="mt-2 flex-grow text-brand-dark/80">
-                  Propuesta orientativa para autónomos y familias. Detalle de coberturas en entrevista personalizada.
+                  Cuadro médico con pediatría, reembolso opcional para especialistas y telemedicina los fines de semana. Lo ajustamos al número de asegurados y a la zona donde vivís o trabajáis.
                 </p>
                 <a href="#contacto" class="pill-btn mt-4 min-h-[44px] justify-center border border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white">
                   Solicitar info
                 </a>
               </div>
             </article>
-            <article class="card-surface flex flex-col overflow-hidden ring-1 ring-brand-action/25">
-              <div class="aspect-[16/10] bg-brand-dark">
+            <article class="reveal card-surface flex flex-col overflow-hidden ring-1 ring-brand-action/25" style="--reveal-i: 3">
+              <div class="aspect-[16/10] bg-brand-cardDark">
                 <img
                   src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
                   width="800"
@@ -776,10 +816,10 @@
                   decoding="async"
                 />
               </div>
-              <div class="flex flex-grow flex-col bg-brand-dark p-5 text-white">
+              <div class="flex flex-grow flex-col bg-brand-cardDark p-5 text-white">
                 <h3 class="text-white">Siniestros: te acompañamos</h3>
                 <p class="mt-2 flex-grow text-white/85">
-                  Guía paso a paso y comunicación con la compañía. Texto de ejemplo; proceso interno [RELLENAR].
+                  Te ayudamos a declarar el parte, reunir facturas y albaranes, y hacer seguimiento con la compañía hasta la resolución. Prioridad: que sepas en todo momento en qué fase está tu expediente.
                 </p>
                 <a
                   href="#contacto"
@@ -794,14 +834,14 @@
       </section>
     </main>
 
-    <footer class="bg-brand-dark text-white">
+    <footer class="section-block-footer mt-6 md:mt-8">
       <div class="container-page py-10">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div>
+          <div class="reveal" style="--reveal-i: 0">
             <p class="font-display font-bold">Susana Lujan Seguros</p>
             <p class="mt-2 text-white/80">Mediación de seguros. Asesoramiento personalizado.</p>
           </div>
-          <div>
+          <div class="reveal" style="--reveal-i: 1">
             <p class="font-semibold">Enlaces legales</p>
             <ul class="mt-3 space-y-2">
               <li><a class="text-white/85 underline-offset-4 hover:text-white hover:underline" href="./aviso-legal.html">Aviso legal</a></li>
@@ -809,17 +849,17 @@
               <li><a class="text-white/85 underline-offset-4 hover:text-white hover:underline" href="./cookies.html">Cookies</a></li>
             </ul>
           </div>
-          <div>
+          <div class="reveal" style="--reveal-i: 2">
             <p class="font-semibold">Contacto</p>
             <ul class="mt-3 space-y-2 text-white/85">
               <li>Tel. <a class="hover:text-white" href="tel:+34960645866">960 64 58 66</a></li>
               <li>
                 Email
-                <a class="break-all hover:text-white" href="mailto:[RELLENAR]">[RELLENAR]</a>
+                <a class="break-all hover:text-white" href="mailto:hola@susanalujan-seguros.demo">hola@susanalujan-seguros.demo</a>
               </li>
             </ul>
           </div>
-          <div>
+          <div class="reveal" style="--reveal-i: 3">
             <p class="font-semibold">Sede</p>
             <p class="mt-3 text-white/85">
               Avinguda d'Algemesí, 12, BAJO<br />
@@ -827,35 +867,128 @@
             </p>
           </div>
         </div>
-        <p class="mt-8 border-t border-white/15 pt-6 text-center text-white/70">
+        <p class="reveal mt-8 border-t border-white/15 pt-6 text-center text-white/70" style="--reveal-i: 4">
           © <span id="year"></span> Susana Lujan Seguros. Todos los derechos reservados.
         </p>
       </div>
     </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    </div>
+
     <script>
       (function () {
-        var grid = document.getElementById("leading-logos");
-        if (!grid) return;
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          grid.classList.add("is-visible");
-          return;
-        }
-        var observer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                grid.classList.add("is-visible");
-                observer.disconnect();
-              }
+        var yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        var header = document.querySelector(".site-header");
+        if (header) {
+          var scrollRaf = null;
+          function onScroll() {
+            if (scrollRaf) return;
+            scrollRaf = requestAnimationFrame(function () {
+              scrollRaf = null;
+              header.classList.toggle("is-scrolled", window.scrollY > 16);
             });
-          },
-          { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
-        );
-        observer.observe(grid);
+          }
+          onScroll();
+          window.addEventListener("scroll", onScroll, { passive: true });
+        }
+
+        var revealNodes = document.querySelectorAll(".reveal");
+        if (reduceMotion) {
+          revealNodes.forEach(function (el) {
+            el.classList.add("is-inview");
+          });
+        } else if (revealNodes.length) {
+          var revealObs = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-inview");
+                  revealObs.unobserve(entry.target);
+                }
+              });
+            },
+            { rootMargin: "0px 0px -6% 0px", threshold: 0.06 }
+          );
+          revealNodes.forEach(function (el) {
+            revealObs.observe(el);
+          });
+        }
+
+        function formatEsInteger(n) {
+          return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        function easeOutExpo(t) {
+          return t >= 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        }
+
+        function runCounter(el) {
+          var span = el.querySelector(".stat-counter__value");
+          if (!span) return;
+          var raw = el.getAttribute("data-count-target");
+          var target = raw ? parseInt(raw, 10) : 0;
+          var prefix = el.getAttribute("data-count-prefix") || "";
+          if (reduceMotion || !target) {
+            span.textContent = prefix + formatEsInteger(target || 0);
+            return;
+          }
+          var start = performance.now();
+          var duration = Math.min(1650, 720 + Math.sqrt(target) * 42);
+          function tick(now) {
+            var t = Math.min(1, (now - start) / duration);
+            var eased = easeOutExpo(t);
+            var val = Math.round(eased * target);
+            span.textContent = prefix + formatEsInteger(val);
+            if (t < 1) requestAnimationFrame(tick);
+            else span.textContent = prefix + formatEsInteger(target);
+          }
+          requestAnimationFrame(tick);
+        }
+
+        var counterNodes = document.querySelectorAll(".stat-counter[data-count-target]");
+        if (reduceMotion) {
+          counterNodes.forEach(runCounter);
+        } else if (counterNodes.length) {
+          var counterObs = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                var el = entry.target;
+                if (!entry.isIntersecting || el.dataset.counted === "1") return;
+                el.dataset.counted = "1";
+                runCounter(el);
+                counterObs.unobserve(el);
+              });
+            },
+            { rootMargin: "0px 0px -12% 0px", threshold: 0.2 }
+          );
+          counterNodes.forEach(function (el) {
+            counterObs.observe(el);
+          });
+        }
+
+        var grid = document.getElementById("leading-logos");
+        if (grid) {
+          if (reduceMotion) {
+            grid.classList.add("is-visible");
+          } else {
+            var logoObs = new IntersectionObserver(
+              function (entries, o) {
+                entries.forEach(function (entry) {
+                  if (entry.isIntersecting) {
+                    grid.classList.add("is-visible");
+                    o.disconnect();
+                  }
+                });
+              },
+              { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+            );
+            logoObs.observe(grid);
+          }
+        }
       })();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>

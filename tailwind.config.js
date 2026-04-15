@@ -10,21 +10,27 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          dark: "#052A05",
+          dark: "#001600",
+          /** Superficie de tarjetas oscuras (más claro que header/pie #001600). */
+          cardDark: "#052a05",
           action: "#006600",
           muted: "#f5f7f5",
           soft: "#eef4ee",
           line: "#dce6dc",
+          canvas: "#e8ebe6",
         },
       },
       fontFamily: {
-        sans: ['"DM Sans"', "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ['"Outfit"', "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ['"Inter Tight"', "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ['"Inter Tight"', "ui-sans-serif", "system-ui", "sans-serif"],
         serif: ['"Playfair Display"', "Georgia", "serif"],
       },
       borderRadius: {
         card: "20px",
         hero: "24px",
+        section: "28px",
+        /* Barra superior fija (`.section-block-header` en `src/input.css`) */
+        headerBar: "24px",
       },
       transitionDuration: {
         DEFAULT: "220ms",

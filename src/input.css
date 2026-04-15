@@ -7,9 +7,25 @@
   No usar clamp() ni utilidades responsive (md:text-*) para font-size en HTML.
 */
 @layer base {
+  /* Ritmo único para entradas y hovers (coherente, discreto). */
+  :root {
+    /* Inset horizontal de .page-shell (sin padding superior ni inferior). */
+    --page-shell-inset: 28px;
+    /* Desktop hero: usada en `index.html` (min-h del #inicio). Cabecera + mb del header; afinar si sobra o falta franja. */
+    --hero-desktop-chrome: 8.25rem;
+    --motion-ease-out: cubic-bezier(0.33, 0, 0.2, 1);
+    --motion-enter: 0.82s;
+    --motion-header: 0.68s;
+    --motion-logo: 0.68s;
+    --motion-stagger: 52ms;
+    --motion-nudge: 8px;
+  }
+
   html {
     font-size: 14px;
     scroll-behavior: smooth;
+    /* Anclas (#seguros, etc.): el titular no queda bajo el header sticky. ~altura barra + inset. */
+    scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 5.75rem);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -27,7 +43,7 @@
   }
 
   body {
-    @apply bg-white font-sans text-brand-dark antialiased;
+    @apply bg-brand-canvas font-sans text-brand-dark antialiased;
     font-size: 14px;
     line-height: 1.65;
   }
@@ -90,12 +106,79 @@
 }
 
 @layer components {
+  /* Contenedor de página: aire lateral; sin padding superior (header al ras del viewport, salvo safe-area) ni inferior (footer al ras del viewport). */
+  .page-shell {
+    @apply mx-auto w-full max-w-none;
+    padding-left: var(--page-shell-inset);
+    padding-right: var(--page-shell-inset);
+  }
+
+  .page-shell > .site-header {
+    top: env(safe-area-inset-top, 0px);
+  }
+
+  /* Tarjeta de sección: bloques redondeados sobre el fondo canvas (el fondo lo define cada sección) */
+  .section-block {
+    @apply relative w-full overflow-hidden rounded-section border border-brand-line/60 shadow-[0_12px_40px_-14px_rgba(0,22,0,0.14)];
+  }
+
+  .section-block.section-seguros-dark,
+  .section-block.section-testimonios-dark {
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 48px -14px rgba(0, 0, 0, 0.32);
+  }
+
+  /* Header: verde más profundo (#001600), distinto del cuerpo oscuro de secciones (#052a05 vía brand.cardDark). */
+  .section-block-header {
+    @apply relative z-50 w-full overflow-visible rounded-t-none rounded-b-headerBar border bg-brand-dark text-white shadow-[0_16px_48px_-14px_rgba(0,0,0,0.28)] backdrop-blur-md;
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Pie de página principal: espejo del header — esquinas superiores redondeadas (headerBar), inferiores rectas. */
+  .section-block-footer {
+    @apply relative w-full overflow-hidden rounded-t-headerBar rounded-b-none border bg-brand-dark text-white shadow-[0_16px_48px_-14px_rgba(0,0,0,0.32)];
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
   .container-page {
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 
+  /*
+    Hero a ancho del shell: la card llega al borde izquierdo, pero el copy se alinea con el texto
+    dentro de .container-page + .card-surface.p-5 (borde 1px + 1.25rem), sin depender del ancho de la columna.
+  */
+  .hero-copy-inset {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 1.5rem;
+    padding-left: calc(
+      max(0px, (100vw - 2 * var(--page-shell-inset) - 72rem) / 2) + 1rem + 1px + 1.25rem
+    );
+  }
+
+  @media (min-width: 640px) {
+    .hero-copy-inset {
+      padding-left: calc(
+        max(0px, (100vw - 2 * var(--page-shell-inset) - 72rem) / 2) + 1.5rem + 1px + 1.25rem
+      );
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-copy-inset {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      padding-left: calc(
+        max(0px, (100vw - 2 * var(--page-shell-inset) - 72rem) / 2) + 2rem + 1px + 1.25rem
+      );
+    }
+  }
+
   .pill-btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-semibold transition-transform duration-200 ease-out;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-semibold transition-transform;
+    transition-duration: 240ms;
+    transition-timing-function: var(--motion-ease-out);
   }
 
   .pill-btn:active {
@@ -112,16 +195,35 @@
     @apply rounded-card border border-brand-line/60 bg-white shadow-sm;
   }
 
+  /* Sombra al hover alineada con el resto del motion system */
+  .motion-card-hover {
+    transition-property: box-shadow;
+    transition-duration: 260ms;
+    transition-timing-function: var(--motion-ease-out);
+  }
+
   .heading-accent {
     @apply font-serif italic font-normal text-brand-action;
   }
 
-  /* Línea serif del titular del hero: Playfair a 24px, debajo del primer renglón */
-  .hero-title-line {
-    display: block;
-    font-size: 24px;
-    line-height: 1.25;
-    margin-top: 0.2em;
+  /* Fondo oscuro de sección (más claro que header/pie) — seguros + testimonios */
+  .section-seguros-dark,
+  .section-testimonios-dark {
+    @apply bg-brand-cardDark;
+  }
+
+  .section-seguros-dark .seguros-heading,
+  .section-testimonios-dark .testimonios-heading {
+    @apply text-white;
+  }
+
+  .section-seguros-dark .seguros-heading .heading-accent {
+    color: #c5f0c5;
+  }
+
+  .section-seguros-dark .seguros-lead,
+  .section-testimonios-dark .testimonios-lead {
+    @apply text-white/85;
   }
 
   /* Enlace de salto: visible solo con teclado (sr-only no tiene “not-sr-only” en Tailwind 3) */
@@ -149,16 +251,16 @@
   /* Compañías colaboradoras: entrada escalonada al entrar en vista */
   .leading-logos-grid .leading-logo-item {
     opacity: 0;
-    transform: translate3d(0, 14px, 0);
+    transform: translate3d(0, 6px, 0);
     transition:
-      opacity 0.55s ease,
-      transform 0.55s ease;
+      opacity var(--motion-logo) var(--motion-ease-out),
+      transform var(--motion-logo) var(--motion-ease-out);
   }
 
   .leading-logos-grid.is-visible .leading-logo-item {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-    transition-delay: calc(var(--logo-i, 0) * 70ms);
+    transition-delay: calc(var(--logo-i, 0) * var(--motion-stagger));
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -166,6 +268,99 @@
       opacity: 1;
       transform: none;
       transition: none;
+    }
+  }
+
+  .site-header {
+    transition: box-shadow 0.65s var(--motion-ease-out);
+  }
+
+  /* Entrada del header: solo un leve deslizamiento, misma curva que el resto. */
+  @keyframes header-enter {
+    from {
+      transform: translate3d(0, -4px, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .site-header.is-header-anim {
+    opacity: 1;
+    animation: header-enter var(--motion-header) var(--motion-ease-out) forwards;
+  }
+
+  .site-header.is-scrolled {
+    box-shadow: 0 10px 36px -16px rgba(0, 0, 0, 0.35);
+  }
+
+  .section-block-header.site-header.is-scrolled {
+    box-shadow: 0 22px 56px -18px rgba(0, 0, 0, 0.45);
+  }
+
+  /* Revelado al scroll: fade + leve elevación, escalonado igual que logos */
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, var(--motion-nudge), 0);
+    transition:
+      opacity var(--motion-enter) var(--motion-ease-out),
+      transform var(--motion-enter) var(--motion-ease-out);
+    transition-delay: calc(var(--reveal-i, 0) * var(--motion-stagger));
+  }
+
+  .reveal.is-inview {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Testimonios: hover apenas perceptible, misma curva */
+  .testimonial-card {
+    transition:
+      transform 320ms var(--motion-ease-out),
+      box-shadow 320ms var(--motion-ease-out),
+      border-color 320ms var(--motion-ease-out);
+  }
+
+  .testimonial-card:hover {
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 12px 28px -16px rgba(5, 42, 5, 0.12);
+  }
+
+  .section-testimonios-dark .testimonial-card:hover {
+    box-shadow: 0 14px 32px -14px rgba(0, 0, 0, 0.28);
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+
+  /* Contador: cifras en verde intenso, más peso y tracking -2% */
+  .stat-counter {
+    color: #006600;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  /* Contador: evita saltos de layout */
+  .stat-counter__value {
+    display: inline-block;
+    min-width: 3ch;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-header.is-header-anim {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal,
+    .reveal.is-inview {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .testimonial-card:hover {
+      transform: none;
     }
   }
 }
